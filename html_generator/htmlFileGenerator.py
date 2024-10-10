@@ -63,9 +63,9 @@ for template_attribute in config_json:
 
         for form_element_object in config_json[template_attribute]:
 
-            html_component_name = getKey(form_element_object) # example: header, password
+            html_component_name = getKey(form_element_object) # Example: header, password
             if (html_component_name.split("_")[0] != "grouped"): 
-                html_component_body = html_components_object[html_component_name] # actual html code
+                html_component_body = html_components_object[html_component_name] # Actual html code.
 
                 for attribute_name, attribute_value in form_element_object[html_component_name].items():
                     html_component_body = html_component_body.replace(f"{attribute_name.upper()}_CONFIG", f"{attribute_value}")
@@ -75,7 +75,7 @@ for template_attribute in config_json:
                 form_elements += html_component_body
             
             else:
-                multi_element_attribs = {} # components that share attributes.
+                multi_element_attribs = {} # group of components that share attributes.
                 for attribute_name, attribute_value in form_element_object[html_component_name].items():
                     multi_elements_html = ""
                     if (type(attribute_value) != list):
@@ -85,7 +85,7 @@ for template_attribute in config_json:
                           # for a multi element component.
                         for sub_element in attribute_value:
                             html_component_body = html_components_object[html_component_name.split("_")[1]]
-                            # addes the multi elements attributes 
+                            # adds the multi-elements attributes 
                             for multi_element_attribute in multi_element_attribs:
                                 html_component_body = html_component_body.replace(f"{multi_element_attribute.upper()}_CONFIG", f"{multi_element_attribs[multi_element_attribute]}")
                             # adds specific element attribute
@@ -101,6 +101,6 @@ for template_attribute in config_json:
 
 
 
-# Temporary, eventually it will spew out an HTML element.
+# Actually makes the file.
 with open("test.html", "w+") as file:
     file.write(html_template)

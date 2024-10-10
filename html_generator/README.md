@@ -1,9 +1,9 @@
-# file-generator Config.json -> HTML
+# html-generator Config.json -> HTML
 
 ## About:
 
-Note the picture and the config.json file. The json config would yield the form settings in the picture. Feel free to adjust  
-the config to get the HTML file you need. The chances of an error are minimal, but if you encounter any, please contact [me](https://www.linkedin.com/in/abdullah-al-khafaji-2718861bb/).
+Note the config.json file and the picture. The json config would yield the form in the picture. Feel free to adjust  
+the config.json to get the HTML file looking however you need it. The chances of an error are minimal, but if you encounter any, please contact [me](https://www.linkedin.com/in/abdullah-al-khafaji-2718861bb/) or submit an issue to the repo [here](https://github.com/AbdullahAlKhafajiDev/remote-ESP32-communication/issues/new).
 
 ## Future:
 

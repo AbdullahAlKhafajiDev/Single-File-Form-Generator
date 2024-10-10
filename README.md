@@ -8,7 +8,8 @@ This is a solution for those who have a router that flushes the ARP table and do
 
 ## Adjusting settings:
 
-I included an HTML-file maker which will use the base HTML template to generate an HTML file that has the inputs you desire.  
+I included an HTML-file maker which will use the base HTML template to generate an HTML file that has the inputs you desire.
+
 All you need to do is edit the config.json file and run the Python script. It will create an HTML file ready to use!
 
 ## Considerations:
