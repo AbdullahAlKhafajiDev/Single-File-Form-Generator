@@ -67,8 +67,8 @@
 
         .passwordField {
             max-width: 100%;
-            margin: 0.5rem 0;
-            padding: 0.2rem 0.5rem;
+            margin-bottom: 0.5rem;
+            padding: 0.4rem 0.5rem;
             border-radius: 0.5rem;
             font-size: 1.2rem;
 
@@ -147,7 +147,6 @@
         }
 
         .console-window {
-            /* width: 5rem; */
             color: white;
             font-family: Courier;
 
@@ -160,6 +159,8 @@
             margin-left: auto;
             margin-right: auto;
             margin-top: 2rem;
+
+            overflow: hidden; 
         }
 
         .console-window > span {
@@ -167,8 +168,19 @@
             padding-top: 1rem;
             padding-left: 1rem;
         }
-        .console-window ul {
+
+        .console-window > ul {
+            width: 90%;
             padding-bottom: 1rem;
+
+            overflow-x: hidden; 
+            word-wrap: break-word;
+        }
+
+        .console-window li {
+            white-space: normal;  
+            word-wrap: break-word; 
+            word-break: break-all; 
         }
 
         @keyframes bgShift {
@@ -212,7 +224,7 @@
         </div>
         <div class="console-window">
             <span>console:</span>
-            <ul id="consoleOutput">
+            <ul id="console-output">
             </ul>
         </div>
     </div>
@@ -233,10 +245,10 @@
         // parameters: message <String>
         // Doesn't return.
         function addConsoleMessage(message) {
-            const consoleOutputWindow = document.getElementById('consoleOutput');
+            const consoleOutputWindow = document.getElementById('console-output');
             const newEvent = document.createElement('li');
             const date = new Date();
-            newEvent.innerText = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} - ${message}`;
+            newEvent.innerText = `${date.toLocaleTimeString('it-IT')} - ${message}`;
             consoleOutputWindow.appendChild(newEvent);
         }
 

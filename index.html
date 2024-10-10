@@ -152,13 +152,10 @@
         }
 
         .console-window {
-            /* width: 5rem; */
             color: white;
             font-family: Courier;
 
             min-height: 20vh;
-            opacity: 0.95;
-            backdrop-filter: blur(10px);
             background-color: black;
             
             border-radius: 1rem;
@@ -167,6 +164,8 @@
             margin-left: auto;
             margin-right: auto;
             margin-top: 2rem;
+
+            overflow: hidden; 
         }
 
         .console-window > span {
@@ -174,9 +173,19 @@
             padding-top: 1rem;
             padding-left: 1rem;
         }
-        .console-window ul {
+
+        .console-window > ul {
+            width: 90%;
             padding-bottom: 1rem;
-            padding-right: 0.6rem;
+
+            overflow-x: hidden; 
+            word-wrap: break-word;
+        }
+
+        .console-window li {
+            white-space: normal;  
+            word-wrap: break-word; 
+            word-break: break-all; 
         }
 
         @keyframes bgShift {
@@ -233,7 +242,7 @@
         </div>
         <div class="console-window">
             <span>console:</span>
-            <ul id="consoleOutput">
+            <ul id="console-output">
             </ul>
         </div>
     </div>
@@ -254,7 +263,7 @@
         // parameters: message <String>
         // Doesn't return.
         function addConsoleMessage(message) {
-            const consoleOutputWindow = document.getElementById('consoleOutput');
+            const consoleOutputWindow = document.getElementById('console-output');
             const newEvent = document.createElement('li');
             const date = new Date();
             newEvent.innerText = `${date.toLocaleTimeString('it-IT')} - ${message}`;
