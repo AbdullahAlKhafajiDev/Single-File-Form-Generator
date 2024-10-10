@@ -2,12 +2,18 @@ import json
 from pathlib import Path
 from os import listdir, path
 
-# Takes in a file path, and returns THE text 
+# Takes in a file path, and returns the text 
 # content without newline characters.
 def loadFile(file_path):
     text_file_with_newline = Path(file_path).read_text()
     text_file = text_file_with_newline.replace("\n", "")
     return text_file
+
+# Takes in an HTML file path, and returns 
+# the HTML code as <String>.
+def loadHTML(html_file_path):
+    html_file = Path(html_file_path).read_text()
+    return html_file
 
 # Retrieves all HTML form components, their HTML code
 # and returns them as a dictionary.
@@ -18,7 +24,7 @@ def objectifyHTMLComponents():
     html_elements = listdir(form_elements_path)
     for element in html_elements:
         element_name = element.split(".")[0]
-        element_html = loadFile(f"{form_elements_path}\\{element}")
+        element_html = loadHTML(f"{form_elements_path}\\{element}")
 
         html_objects[element_name] = element_html
 
@@ -48,7 +54,7 @@ html_components_object = objectifyHTMLComponents()
 # Loads JSON file.
 config_json = json.loads(loadFile(json_config_path))
 
-html_template = loadFile(base_template_path)
+html_template = loadHTML(base_template_path)
 
 for template_attribute in config_json:
     if (type(config_json[template_attribute]) != list):
