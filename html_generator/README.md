@@ -12,13 +12,13 @@ To make this a bit easier for non-technical users, eventually I'd love to make a
 
 ### Application-wide changes:
 
-- `background_image_url`: Changes the background wallpaper of the application
-- `title`: Changes the title of the application window.
-- `target`: Changes the server and port that the application hits with the `POST` request.
+`background_image_url`: Changes the background wallpaper of the application.  
+`title`: Changes the title of the application window.  
+`target`: Changes the server and port that the application hits with the `POST` request.
 
 ### Form changes:
 
-`form_elements` contains a list of inputs go in the form.
+`form_elements`: contains a list of inputs go in the form.
 
 - `header`: Adds an `h2` HTML element header that seperates input sections of the form.
 
@@ -43,7 +43,7 @@ To make this a bit easier for non-technical users, eventually I'd love to make a
 
 ## Config -> HTML
 
-The following json config will be rendered into the picture.
+The following json config will be rendered into the following picture.
 
 ```json
 {

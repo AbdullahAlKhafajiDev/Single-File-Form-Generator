@@ -2,13 +2,15 @@
 
 ## About:
 
-This application was made to make the ESP32 turn on a PC over the internet.  
-The ESP32 will short the `Power SW` pins on the motherboard, simulating a power button click, which will turn on the PC.  
+This application was made to make the ESP32 turn on a PC over the internet.
+
+The ESP32 will short the `Power SW` pins on the motherboard, simulating a power button click, which will turn on the PC.
+
 This is a solution for those who have a router that flushes the ARP table and don't have means to manually add a static record to keep Wake-on-LAN (WoL) working.
 
-## Adjusting settings:
+## Adjusting settings via HTML-generator:
 
-I included an HTML-file maker which will use the base HTML template to generate an HTML file that has the inputs you desire.
+I included an **HTML-generator** which will use the base HTML template to generate an HTML file that has the inputs you desire.
 
 All you need to do is edit the config.json file and run the Python script. It will create an HTML file ready to use!
 
