@@ -1,6 +1,6 @@
 {
     "background_image_url": "https://giffiles.alphacoders.com/214/214384.gif", 
-    "title": "Remote Power\n Management Server",
+    "title": "Aymen's Power \nManagement Server",
     "target": "http://127.0.0.1:5000/",
     "form_elements": [
         {
@@ -20,7 +20,7 @@
             }
         },
         {
-            "grouped_radio": {
+            "grouped_radioMaster": {
                 "input_name": "mode",
                 "radio_options": [
                     {
@@ -30,6 +30,21 @@
                     {
                         "option_label": "Turn Off",
                         "option_value": "off"
+                    }
+                ]
+            }
+        },
+        {
+            "grouped_selectMaster": {
+                "input_name": "cars",
+                "select_options": [
+                    {
+                        "option_label": "Volvo",
+                        "option_value": "volvo"
+                    },
+                    {
+                        "option_label": "Mercedes",
+                        "option_value": "mercedes"
                     }
                 ]
             }
