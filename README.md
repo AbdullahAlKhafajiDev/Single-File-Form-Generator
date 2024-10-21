@@ -8,7 +8,7 @@ The ESP32 will short the `Power SW` pins on the motherboard, simulating a power 
 
 This is a solution for those who have a router that flushes the ARP table and don't have means to manually add a static record to keep Wake-on-LAN (WoL) working.
 
-## Adjusting settings via HTML-generator:
+## Adjusting settings via Form-Engine:
 
 I included an [**Form-Engine**](https://github.com/AbdullahAlKhafajiDev/Form-Engine/tree/main/form_engine) which will use the base HTML template to generate an HTML file that has the inputs you desire.
 
@@ -28,3 +28,11 @@ When the server recieves an ON/OFF message from the user, the server switches ON
 <p align="center">
   <img src="https://github.com/AbdullahAlKhafajiDev/remote-ESP32-communication/blob/main/appImage.png?raw=true" />
 </p>
+
+## Testing the application:
+
+I included a basic Python server, **example_server.py** that hosts a basic API that the client application can interact with. Again, the client expects a json response from the server in the following format: `{"message":"messageBody"}`.
+
+## ESP32 code:
+
+Heres's the ESP32 code I used in my project: https://github.com/AbdullahAlKhafajiDev/ESP32-CNC-API-generator/blob/main/esp32_sketch.ino
