@@ -141,6 +141,7 @@ def main():
             html_template = html_template.replace(f"{template_attribute.upper()}_CONFIG", f"{config_json[template_attribute]}")
 
         elif (type(config_json[template_attribute]) == list and template_attribute == "background_image_urls"):
+            # Turns an array into a string.
             html_template = html_template.replace(f'{"background_image_urls".upper()}_CONFIG', f'["{'", "'.join(config_json["background_image_urls"])}"]')
             
         # Builds the body of the form.
