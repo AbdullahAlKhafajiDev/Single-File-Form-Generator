@@ -29,10 +29,14 @@
         }
 
         .window {
+            --blur-value: 10px;
+
             background-image: linear-gradient(to bottom right, #9c71c4, #7492d17c, #9c71c4e8, #7492d17c, #9c71c4);
             background-blend-mode: color-burn;
             background-size: 300% 300%;
-            backdrop-filter: blur(10px);
+
+            -webkit-backdrop-filter: blur(var(--blur-value));
+            backdrop-filter: blur(var(--blur-value));
 
             animation: color 12s ease-in-out infinite;
 
@@ -232,6 +236,28 @@
         </div>
     </div>
     <script defer>
+        // Returns an index based on the number of 
+        // items, or itemsCount. Used to loop through
+        // wallpapers based on the date.
+        // parameters: itemsCount <Int>
+        // returns an index <int>.
+        function getWallpaperIndex(itemsCount) {
+            const date = new Date();
+            todaysDate = date.getDate();
+
+            let dateBasedIndex;
+
+            if (todaysDate < itemsCount) {
+                // If today's the 3rd of Jan, and there are
+                // 12 items in the array (12 > 3rd), return 3.
+                dateBasedIndex = todaysDate - 1;
+            } else {
+                dateBasedIndex = todaysDate % itemsCount;
+            }
+
+            return dateBasedIndex;
+        }
+
         // Retrieves the value of a cookie key. 
         // parameters: key <String>
         // returns the value <String> of the passed in key.
@@ -317,11 +343,26 @@
             }
         }
         
+        // Hands form submission handling to a custom
+        // function.
         document.forms[0].onsubmit = (event)=> {handleSubmission(event)};
 
         // Autofills the password using the cookie.
         if (document.cookie != "") {
             document.querySelector(".passwordField").value = getCookie("password");
+        }
+
+        // Sets the background based on the date.
+        window.onload = () => {
+            // The number of backgrounds should not exceed 30.
+            // The wallpaper selection algorithm isn't designed for 
+            // more than 30 items.
+            const backgroundUrls = BACKGROUND_IMAGE_URLS_CONFIG;
+
+            const wallpaperIndex = getWallpaperIndex(backgroundUrls.length);
+            
+            document.body.style.background = `url(${backgroundUrls[wallpaperIndex]}) center`;
+            document.body.style.backgroundSize = 'cover';
         }
 
     </script>
