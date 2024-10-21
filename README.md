@@ -1,4 +1,4 @@
-# Form-Generator-ESP32-Compatible
+# Form-Engine (ESP32-Compatible)
 
 ## About:
 
@@ -10,9 +10,9 @@ This is a solution for those who have a router that flushes the ARP table and do
 
 ## Adjusting settings via HTML-generator:
 
-I included an [**HTML-generator**](https://github.com/AbdullahAlKhafajiDev/Form-Generator-ESP32-Compatible/tree/main/html_generator) which will use the base HTML template to generate an HTML file that has the inputs you desire.
+I included an [**Form-Engine**](https://github.com/AbdullahAlKhafajiDev/Form-Engine/tree/main/form_engine) which will use the base HTML template to generate an HTML file that has the inputs you desire.
 
-All you need to do is edit the config.json file and run the Python script. It will create an HTML file ready to use!
+All you need to do is edit the config.json file and run the Python script. It will create a single HTML file ready to use!
 
 ## Considerations:
 
