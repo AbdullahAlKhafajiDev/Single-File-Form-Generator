@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 from os import listdir, path
 
+####################### UTILITY FUNCTIONS #######################
 # Takes in a file path, and returns the text 
 # content without newline characters.
 def loadFile(file_path):
@@ -38,7 +39,11 @@ def getKey(dictionary):
         return keys[0]
     else:
         ("Misuse of function getKeys()\n\t Dictionary:\n", dictionary)
-    
+
+#################################################################
+
+# Handles HTML elements form that include a parent and a child,
+# and returns parent code with child code inside of it.
 def handleMultiAtribElement(form_element_object, html_components_object, html_component_name):
     multi_element_attribs = {} # Group of components that share attributes.
 
@@ -76,6 +81,9 @@ def handleMultiAtribElement(form_element_object, html_components_object, html_co
 
     return master_element
 
+# Handles HTML form elements that are one dimensional,
+# meaning they don't contain children that need to 
+# be dynamically rendered.
 def handleSingleAtribElement(form_element_object, html_components_object, html_component_name):
     html_component_body = html_components_object[html_component_name] # Actual html code.
 
@@ -87,6 +95,8 @@ def handleSingleAtribElement(form_element_object, html_components_object, html_c
     # form_elements += html_component_body
     return html_component_body
 
+# Master form handler. Prepares the code to be put inside the
+# HTML form element.
 def handleFormElements(config_json, html_components_object, html_template):
     form_elements = ""
 
@@ -103,6 +113,7 @@ def handleFormElements(config_json, html_components_object, html_template):
     # Places the form elements in the HTML file.
     return html_template.replace(f"{"form_elements".upper()}_CONFIG", f"{form_elements}")
 
+# Main function.
 def main():
     # Current Python file location within the system.
     CURRENT_LOCATION = path.dirname(path.realpath(__file__))
@@ -140,4 +151,5 @@ def main():
     with open("test.html", "w+") as file:
         file.write(html_template)
 
-main()
+if __name__ == "__main__":
+    main()
