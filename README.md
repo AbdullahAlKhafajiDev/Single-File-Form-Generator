@@ -1,4 +1,4 @@
-# Remote ESP32 Communication
+# Form-Generator-ESP32-Compatible
 
 ## About:
 
@@ -10,7 +10,7 @@ This is a solution for those who have a router that flushes the ARP table and do
 
 ## Adjusting settings via HTML-generator:
 
-I included an **HTML-generator** which will use the base HTML template to generate an HTML file that has the inputs you desire.
+I included an [**HTML-generator**](https://github.com/AbdullahAlKhafajiDev/Form-Generator-ESP32-Compatible/tree/main/html_generator) which will use the base HTML template to generate an HTML file that has the inputs you desire.
 
 All you need to do is edit the config.json file and run the Python script. It will create an HTML file ready to use!
 
